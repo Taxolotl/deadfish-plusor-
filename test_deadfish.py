@@ -1,6 +1,6 @@
 import unittest
-from StringIO import StringIO
-import deadfish as mod_ut
+from io import StringIO
+import deadfishPoM as mod_ut
 
 class TestParenFinder(unittest.TestCase):
     """Tests of the method that checks for unbalanced parens"""
@@ -80,27 +80,36 @@ class TestDeadfish(unittest.TestCase):
 
     def test_deadfish__simple(self):
         """Test simple cases for deadfish"""
-        self.assertEqual(mod_ut.deadfish("ii"), 2)
-        self.assertEqual(mod_ut.deadfish("dd"), 0)
-        self.assertEqual(mod_ut.deadfish("iiddi"), 1)
-        self.assertEqual(mod_ut.deadfish("iisss"), 0)
-        self.assertEqual(mod_ut.deadfish("iissis"), 289)
+        self.assertEqual(mod_ut.deadfish("++"), 2)
+        self.assertEqual(mod_ut.deadfish("--"), 0)
+        self.assertEqual(mod_ut.deadfish("++--+"), 1)
+        self.assertEqual(mod_ut.deadfish("++^^^"), 0)
+        self.assertEqual(mod_ut.deadfish("++^^+^"), 289)
 
     def test_deadfish__loop(self):
         """Test the {} construct for looping"""
-        self.assertEqual(mod_ut.deadfish("{{i}}"), 100)
-        self.assertEqual(mod_ut.deadfish("{{i}}i{d}"), 91)
+        self.assertEqual(mod_ut.deadfish("{{+}}"), 100)
+        self.assertEqual(mod_ut.deadfish("{{+}}+{-}"), 91)
 
     def test_deadfish__loop_broken(self):
         """Test that the {} construct is ignored if parens are not nested"""
-        self.assertEqual(mod_ut.deadfish("{{i}"), 10)
-        self.assertEqual(mod_ut.deadfish("}}}}}iid"), 1)
+        self.assertEqual(mod_ut.deadfish("{{+}"), 10)
+        self.assertEqual(mod_ut.deadfish("}}}}}++-"), 1)
 
     def test_deadfish__cond(self):
         """Test that things inside of () are executed only if the
         the accumulator is non-zero"""
-        self.assertEqual(mod_ut.deadfish("i(iii)"), 4)
-        self.assertEqual(mod_ut.deadfish("id(iii)i"), 1)
+        self.assertEqual(mod_ut.deadfish("+(+++)"), 4)
+        self.assertEqual(mod_ut.deadfish("+-(+++)+"), 1)
+      
+    def test_deadfish__sqrt(self):
+        """Test that the sqrt command does not break everything"""
+        self.assertEqual(mod_ut.deadfish("+++++^/"), 5)
+        self.assertEqual(mod_ut.deadfish("++/"), 2)
+
+    def test_deadfish__converter(self):
+        """"""
+        self.assertEqual(mod_ut.convert("idcoshw"), "+d.>^!*")
 
 if __name__ == "__main__":
     unittest.main()

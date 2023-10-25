@@ -13,7 +13,7 @@ One such joke language is Deadfish, which got its name from
 
 Nevertheless, the wiki page for Deadfish contains implementations in 65 different languages including C, C#, C++, Chicken, Clever, COBOL, and Commodore 64 BASIC to name just the C's.
 
-Deadfish has been extended to Deadfish~PlusOr-, which is based on the original Deadfish language.  For what is probably a good reason,  Deadfish~PlusOr- remained unimplemented... until today.
+Deadfish has been extended to Deadfish-PlusOr-(Pronounced "Deadfish Plus Or Minus"), which is based on the original Deadfish language.  For what is probably a good reason,  Deadfish-PlusOr- remained unimplemented... until today.
 
 # Deadfish Language Features
 
@@ -61,9 +61,9 @@ There is also a CLI for Deadfish~, which can be accessed with ``deadfish.deadfis
 
 ```
 >>> deadfish.deadfish_cli()
->>+++>
+>> +++>
 3
->>*
+>> *
 Hello, World!
 ```
 
@@ -72,11 +72,11 @@ Hello, World!
 From ``deadfish_cli()``:
 
 ```
->>++^++++^++++++++.++++++++++++++++++++++++++++++++++++++++.+++{.}---------.-------.++++++++++.-------.
+>> ++^++++^++++++++.++++++++++++++++++++++++++++++++++++++++.+++{.}---------.-------.++++++++++.-------.
 Horrrrrrrrrrible
->>>
+>> >
 101
->>h
+>> h
 Hello, World!
 ```
 
