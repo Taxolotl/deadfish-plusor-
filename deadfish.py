@@ -1,15 +1,16 @@
 import sys
 
 COMMANDS = {
-    "i": lambda x, y: (x+1, y),
-    "d": lambda x, y: (x-1, y),
-    "s": lambda x, y: (x*x, y),
-    "o": lambda x, y: (print_accum(x, char=False), y),
-    "c": lambda x, y: (print_accum(x, char=True), y),
-    "w": lambda x, y: print_world(x, y),
+    "+": lambda x, y: (x+1, y),
+    "-": lambda x, y: (x-1, y),
+    "^": lambda x, y: (x*x, y),
+    "/": lambda x, y: (int(math.ceil(math.sqrt(x))), y),
+    ">": lambda x, y: (print_accum(x, char=False), y),
+    ".": lambda x, y: (print_accum(x, char=True), y),
+    "*": lambda x, y: print_world(x, y),
     "(": lambda x, y: parse_parens(x, y, loop=False),
     "{": lambda x, y: parse_parens(x, y, loop=True),
-    "h": lambda x, y: sys.exit()
+    "!": lambda x, y: sys.exit()
 }
 
 POP = lambda x: (x[0], x[1:])
