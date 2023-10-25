@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "deadfishPoM_Taxolotl"
+version = "0.0.1"
+authors = [
+  { name="Taxolotl", email="dont@email.me" },
+]
+description = "An interpreter for a modified version of Deadfish~ that is inspired by brainf**k called Deadfish-PlusOr-"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Taxolotl/deadfish-plusor--python_package"
+"Bug Tracker" = "https://github.com/Taxolotl/deadfish-plusor--python_package/issues"

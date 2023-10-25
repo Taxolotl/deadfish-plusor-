@@ -1,6 +1,6 @@
 import unittest
 from io import StringIO
-import deadfishPoM as mod_ut
+import src.deadfishPoM_Taxolotl.deadfishPoM as mod_ut
 
 class TestParenFinder(unittest.TestCase):
     """Tests of the method that checks for unbalanced parens"""
