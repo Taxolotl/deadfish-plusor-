@@ -33,9 +33,9 @@ def find_matching_paren(in_str, open_sym, close_sym):
 def parse_parens(x, y, loop=False):
   """If we find either ( or { then do one of the following:
 
-       * For (, execute the statement in the parens if the
+       * For (, execute the statement in the parentheses if the
          accumulator is > 0
-       * For {, execute the statement in the parens 10 times"""
+       * For {, execute the statement in the brackets 10 times"""
   close_paren = "}" if loop else ")"
   open_paren = "{" if loop else "("
   close_paren_indx = find_matching_paren(y, open_paren, close_paren)
