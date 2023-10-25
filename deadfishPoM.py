@@ -51,9 +51,30 @@ def parse_parens(x, y, loop=False):
 
 
 def reset_accum(x):
-  """Reset accumulator to 0 if it is either -1 or 256"""
-  return ((0 if x[0] in (-1, 256) else x[0]), x[1])
-
+  """
+  If x >= 256, round it back into 255,
+  if it isn't, then check if it's <= -1, 
+  in which case, round it backwards
+  """
+  y = x
+  if (x[0] >= 256):
+    y = (((x[0] - 1) - 255), x[1])
+  elif (x[0] <= -1):
+    y =  ((256 - (x[0])), x[1])
+  else:
+    return (x[0], x[1])
+  if (y[0] >= 256):
+    y = (((y[0] - 1) - 255), y[1])
+  elif (y[0] <= -1):
+    y =  ((256 - (y[0])), y[1])
+  else:
+    return (y[0], y[1])
+  while(y[0] >= 256 or y[0] <= -1):
+    if (y[0] >= 256):
+      y = (((y[0] - 1) - 255), y[1])
+    elif (y[0] <= -1):
+      y =  ((256 - (y[0])), y[1])
+  return (y[0], y[1])
 
 def print_world(x, y, out=sys.stdout):
   """Write Hello, World! to the selected output device"""
@@ -85,8 +106,11 @@ def deadfish_cli(accum=0):
     accum = deadfish(input("\n>>"), accum=accum)
     print
 
+
 def convert(x):
-    return x.replace("i", "+").replace("d", "-").replace("s", "^").replace("c", ".").replace("o", ">").replace("!", "*").replace("w", "*")
+  return x.replace("i", "+").replace("d", "-").replace("s", "^").replace(
+      "c", ".").replace("o", ">").replace("!", "*").replace("w", "*")
+
 
 if __name__ == "__main__":
   deadfish_cli()
