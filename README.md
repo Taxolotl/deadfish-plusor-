@@ -49,7 +49,7 @@ The code performs no error checking, and invalid commands or incorrectly nested 
 
 #Usage
 
-The source code is entirely contained in ``deadfish.py``.  Evaluate Deadfish strings with the ``deadfish.deadfish`` method.
+The source code is entirely contained in ``deadfishPoM.py``.  Evaluate Deadfish strings with the ``deadfishPoM.deadfish`` method.
 
 ```python
 >>> import deadfish
@@ -57,7 +57,7 @@ The source code is entirely contained in ``deadfish.py``.  Evaluate Deadfish str
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 ```
 
-There is also a CLI for Deadfish~, which can be accessed with ``deadfish.deadfish_cli()``
+There is also a CLI for Deadfish~, which can be accessed with ``deadfishPoM.deadfish_cli()``
 
 ```
 >>> deadfish.deadfish_cli()
