@@ -28,9 +28,9 @@ A Deadfish program has a single integer accumulator variable, which is initializ
 
 If the accumulator becomes -1 or 256, it is reset to zero.
 
-# Deadfish~PlusOr- Language Features
+# Deadfish-PlusOr- Language Features
 
-Deadfish~ is based on the Deadfish programming language, and inspired by the [BrainF**k](https://github.com/TryItOnline/brainfuck) language.  Programs have the same single integer accumulator variable as for Deadfish, which is initialized to zero, and has the same behavior around values -1 and 256.  The language is defined via MY MIND, which contains the following table of supported commands
+Deadfish-PlusOr- is based on the Deadfish programming language, and inspired by the [BrainF**k](https://github.com/TryItOnline/brainfuck) language.  Programs have the same single integer accumulator variable as for Deadfish, which is initialized to zero, and has the same behavior around values -1 and 256.  The language is defined via MY MIND, which contains the following table of supported commands
 
 |cmd| description                                                                               |
 |:-:|:------------------------------------------------------------------------------------------|
@@ -52,15 +52,15 @@ The code performs no error checking, and invalid commands or incorrectly nested 
 The source code is entirely contained in ``deadfishPoM.py``.  Evaluate Deadfish strings with the ``deadfishPoM.deadfish`` method.
 
 ```python
->>> import deadfish
->>> deadfish.deadfish("++^++++^{+.}{+.}+.+.+.+.+.+.")
+>>> import deadfishPoM
+>>> deadfishPoM.deadfish("++^++++^{+.}{+.}+.+.+.+.+.+.")
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 ```
 
-There is also a CLI for Deadfish~, which can be accessed with ``deadfishPoM.deadfish_cli()``
+There is also a CLI for Deadfish-PlusOr-, which can be accessed with ``deadfishPoM.deadfish_cli()``
 
 ```
->>> deadfish.deadfish_cli()
+>>> deadfishPoM.deadfish_cli()
 >> +++>
 3
 >> *
